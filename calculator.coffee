@@ -1,15 +1,17 @@
-menu = ""
-numA = 6
-numB = 3
+class select
+  numA = 6
+  menu = "*"
+  numB = 2
 
-add = () -> numA + numB
-minus = () -> numA - numB
-multi = () -> numA * numB
-division = () -> numA / numB
-
-message = switch
-  when menu == "+" then alert add(6, 3)
-  when menu == "-" then alert minus(6, 3)
-  when menu == "*" then alert multi(6, 3)
-  when menu == "/" then alert division(6, 3)
-  else alert("False!!")
+class calculator extends select
+  message = switch
+    when select.menu == "+" then select.numA + select.numB
+    when select.menu == "-" then select.numA - select.numB
+    when select.menu == "*" then select.numA * select.numB
+    when select.menu == "/" then select.numA / select.numB
+    else alert("False!!")
+    
+select = new sclect();
+calculator = new calculator();
+select()
+alert calculator()
