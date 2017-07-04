@@ -1,11 +1,19 @@
-numA = 6
-menu = "*"
-numB = 2
+class Calculator
+  constructor:() ->
+    $('#disp').val('')
+    @calcList = []
 
-message = switch
-  when menu == "+" then alert(numA + numB)
-  when menu == "-" then alert(numA - numB)
-  when menu == "*" then alert(numA * numB)
-  when menu == "/" then alert(numA / numB)
-  else alert("False!!")
+    $('#1,#2,#3,#4,#5,#6,#7,#8,#9,#c').click((evt) =>
+      @calcList.push evt.target.defaultValue
+      $('#disp').val(@calcList.join(''))
 
+    )
+
+  methodTest:() ->
+    console.log '>>>>'
+
+
+
+
+
+new Calculator()
