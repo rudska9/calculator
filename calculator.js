@@ -6,10 +6,18 @@
     function Calculator() {
       $('#disp').val('');
       this.calcList = [];
-      $('#1,#2,#3,#4,#5,#6,#7,#8,#9,#c').click((function(_this) {
+      this.calcList2 = [];
+      $('#1,#2,#3,#4,#5,#6,#7,#8,#9, #div, #per, #mul, #plus, #dot, #minus').click((function(_this) {
         return function(evt) {
           _this.calcList.push(evt.target.defaultValue);
           return $('#disp').val(_this.calcList.join(''));
+        };
+      })(this));
+      $('#C').click((function(_this) {
+        return function(evt) {
+          _this.calcList.push(evt.target.defaultValue);
+          $('#disp').val(_this.calcList.clear);
+          return _this.calcList = '';
         };
       })(this));
     }
