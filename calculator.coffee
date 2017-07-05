@@ -9,11 +9,6 @@ class Calculator
 
     )
 
-  methodTest:() ->
-    console.log '>>>>'
-
-
-
 
 
 new Calculator()

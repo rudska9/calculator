@@ -14,10 +14,6 @@
       })(this));
     }
 
-    Calculator.prototype.methodTest = function() {
-      return console.log('>>>>');
-    };
-
     return Calculator;
 
   })();
