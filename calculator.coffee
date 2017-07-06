@@ -12,8 +12,8 @@ class Calculator
       $('#disp').val(@calcList1.join(''))
 
     )
-    $('#C').click((evt) =>
-      @calcList2.push evt.target.defaultValue
-      $('#disp').val(@calcList1.clear)
-    )
+$('#C').click((evt) =>
+  @calcList2.push evt.target.defaultValue
+  $('#disp').val(@calcList1.clear)
+)
 new Calculator()

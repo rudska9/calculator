@@ -15,17 +15,18 @@
           return $('#disp').val(_this.calcList1.join(''));
         };
       })(this));
-      $('#C').click((function(_this) {
-        return function(evt) {
-          _this.calcList2.push(evt.target.defaultValue);
-          return $('#disp').val(_this.calcList1.clear);
-        };
-      })(this));
     }
 
     return Calculator;
 
   })();
+
+  $('#C').click((function(_this) {
+    return function(evt) {
+      _this.calcList2.push(evt.target.defaultValue);
+      return $('#disp').val(_this.calcList1.clear);
+    };
+  })(this));
 
   new Calculator();
 
