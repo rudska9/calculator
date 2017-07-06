@@ -5,19 +5,20 @@
   Calculator = (function() {
     function Calculator() {
       $('#disp').val('');
-      this.calcList = [];
+      this.calcList1 = [];
       this.calcList2 = [];
+      this.calcList3 = [];
+      this.value = 0;
       $('#1,#2,#3,#4,#5,#6,#7,#8,#9, #div, #per, #mul, #plus, #dot, #minus').click((function(_this) {
         return function(evt) {
-          _this.calcList.push(evt.target.defaultValue);
-          return $('#disp').val(_this.calcList.join(''));
+          _this.calcList1.push(evt.target.defaultValue);
+          return $('#disp').val(_this.calcList1.join(''));
         };
       })(this));
       $('#C').click((function(_this) {
         return function(evt) {
-          _this.calcList.push(evt.target.defaultValue);
-          $('#disp').val(_this.calcList.clear);
-          return _this.calcList = '';
+          _this.calcList2.push(evt.target.defaultValue);
+          return $('#disp').val(_this.calcList1.clear);
         };
       })(this));
     }
