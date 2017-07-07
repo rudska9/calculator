@@ -8,13 +8,17 @@ class Calculator
     @calcList3 = []
     @count = 0
     @value = ''
+    @result = ''
 
-    $('.num, ,menu').click((evt) =>
+    $('.num, .menu').click((evt) =>
       @total.push evt.target.defaultValue
       $('#disp').val(@total.join(''))
+      if
       @value += @total[@count++]
       console.log @value
+
     )
+
     $('#C').click((evt) =>
       @calcList1.push evt.target.defaultValue
       $('#disp').val(@total.clear)
@@ -23,11 +27,12 @@ class Calculator
       @value = ''
 
     )
-    $('#equal').click((evt)=>
+    $('#equal').click((evt) =>
       @calcList2.push evt.target.defaultValue
-      $('#disp').val(@total.join(''))
+      $('#disp').val(@total.clear)
 
-
+      @result = @value
+      console.log @result
 
     )
 new Calculator()

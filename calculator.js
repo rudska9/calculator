@@ -11,12 +11,16 @@
       this.calcList3 = [];
       this.count = 0;
       this.value = '';
-      $('.num, ,menu').click((function(_this) {
+      this.result1 = 0;
+      this.result2 = 0;
+      this.result3 = 0;
+      $('.num, .menu').click((function(_this) {
         return function(evt) {
           _this.total.push(evt.target.defaultValue);
           $('#disp').val(_this.total.join(''));
           _this.value += _this.total[_this.count++];
-          return console.log(_this.value);
+          _this.result1 = _this.value;
+          return console.log(_this.result1);
         };
       })(this));
       $('#C').click((function(_this) {
@@ -31,7 +35,9 @@
       $('#equal').click((function(_this) {
         return function(evt) {
           _this.calcList2.push(evt.target.defaultValue);
-          return $('#disp').val(_this.total.join(''));
+          $('#disp').val(_this.total.clear);
+          _this.result = _this.value;
+          return console.log(_this.result);
         };
       })(this));
     }
