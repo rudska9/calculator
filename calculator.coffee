@@ -2,18 +2,33 @@ class Calculator
   constructor:() ->
     $('#disp').val('')
 
+    @total = []
     @calcList1 = []
     @calcList2 = []
     @calcList3 = []
-    @value=0
+    @count = 0
+    @value = ''
 
-    $('#1,#2,#3,#4,#5,#6,#7,#8,#9, #div, #per, #mul, #plus, #dot, #minus').click((evt) =>
-      @calcList1.push evt.target.defaultValue
-      $('#disp').val(@calcList1.join(''))
-
+    $('.num, ,menu').click((evt) =>
+      @total.push evt.target.defaultValue
+      $('#disp').val(@total.join(''))
+      @value += @total[@count++]
+      console.log @value
     )
     $('#C').click((evt) =>
+      @calcList1.push evt.target.defaultValue
+      $('#disp').val(@total.clear)
+      @total = []
+      @count = 0
+      @value = ''
+
+    )
+    $('#equal').click((evt)=>
       @calcList2.push evt.target.defaultValue
-      $('#disp').val(@calcList1.clear)
+      $('#disp').val(@total.join(''))
+
+
+
     )
 new Calculator()
+

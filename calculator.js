@@ -5,20 +5,33 @@
   Calculator = (function() {
     function Calculator() {
       $('#disp').val('');
+      this.total = [];
       this.calcList1 = [];
       this.calcList2 = [];
       this.calcList3 = [];
-      this.value = 0;
-      $('#1,#2,#3,#4,#5,#6,#7,#8,#9, #div, #per, #mul, #plus, #dot, #minus').click((function(_this) {
+      this.count = 0;
+      this.value = '';
+      $('.num, ,menu').click((function(_this) {
         return function(evt) {
-          _this.calcList1.push(evt.target.defaultValue);
-          return $('#disp').val(_this.calcList1.join(''));
+          _this.total.push(evt.target.defaultValue);
+          $('#disp').val(_this.total.join(''));
+          _this.value += _this.total[_this.count++];
+          return console.log(_this.value);
         };
       })(this));
       $('#C').click((function(_this) {
         return function(evt) {
+          _this.calcList1.push(evt.target.defaultValue);
+          $('#disp').val(_this.total.clear);
+          _this.total = [];
+          _this.count = 0;
+          return _this.value = '';
+        };
+      })(this));
+      $('#equal').click((function(_this) {
+        return function(evt) {
           _this.calcList2.push(evt.target.defaultValue);
-          return $('#disp').val(_this.calcList1.clear);
+          return $('#disp').val(_this.total.join(''));
         };
       })(this));
     }
