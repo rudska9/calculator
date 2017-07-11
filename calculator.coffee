@@ -13,7 +13,7 @@ class Calculator
     $('.num, .menu').click((evt) =>
       @total.push evt.target.defaultValue
       $('#disp').val(@total.join(''))
-      if
+
       @value += @total[@count++]
       console.log @value
 
@@ -27,13 +27,6 @@ class Calculator
       @value = ''
 
     )
-    $('#equal').click((evt) =>
-      @calcList2.push evt.target.defaultValue
-      $('#disp').val(@total.clear)
 
-      @result = @value
-      console.log @result
-
-    )
 new Calculator()
 
